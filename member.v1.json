@@ -1,0 +1,847 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "member",
+    "version": "1.0",
+    "description": "This API is used for Manage the members of this system",
+    "contact": {
+      "name": "Mohamed Rismy Mohamed Azoor",
+      "email": "azoor@rezgateway.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "nations-watchman"
+    }
+  ],
+  "paths": {
+    "/member": {
+      "get": {
+        "summary": "List all the members",
+        "tags": [
+          "memeber"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-members",
+        "description": "List all the members",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a member",
+        "tags": [
+          "memeber"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-members",
+        "description": "Create a member",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "member",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "id": "1",
+                    "name": "Mohamed Rismy Mohamed Azoor",
+                    "gender": "male",
+                    "phonenumber": "0714292844",
+                    "password": "123456"
+                  }
+                },
+                "description": "",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "phonenumber": {
+                    "type": "string"
+                  },
+                  "ssn": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "address",
+                  "phonenumber",
+                  "email"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-members",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Delete a member",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "title": "member",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "id": "1",
+                    "name": "Mohamed Rismy Mohamed Azoor",
+                    "gender": "male",
+                    "phonenumber": "0714292844",
+                    "password": "123456"
+                  }
+                },
+                "description": "",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "phonenumber": {
+                    "type": "string"
+                  },
+                  "ssn": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "address",
+                  "phonenumber",
+                  "email"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "put": {
+        "summary": "",
+        "operationId": "put-member",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Update member details",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "member",
+                "type": "object",
+                "x-examples": {
+                  "example-1": {
+                    "id": "1",
+                    "name": "Mohamed Rismy Mohamed Azoor",
+                    "gender": "male",
+                    "phonenumber": "0714292844",
+                    "password": "123456"
+                  }
+                },
+                "description": "",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "string"
+                  },
+                  "phonenumber": {
+                    "type": "string"
+                  },
+                  "ssn": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "address",
+                  "phonenumber",
+                  "email"
+                ]
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    },
+    "/member/{phonenumber}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "phonenumber",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "",
+        "operationId": "get-member-phonenumber",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "member",
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "id": "1",
+                      "name": "Mohamed Rismy Mohamed Azoor",
+                      "gender": "male",
+                      "phonenumber": "0714292844",
+                      "password": "123456"
+                    }
+                  },
+                  "description": "",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "phonenumber": {
+                      "type": "string"
+                    },
+                    "ssn": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string",
+                      "format": "password"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "gender": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "address",
+                    "phonenumber",
+                    "email"
+                  ]
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "name": "Mohamed Rismy Mohamed Azoor",
+                      "email": "azoor@rezgateway.com",
+                      "phonenumber": "0714292844"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Get member details by registered phone number",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/members/validate": {
+      "get": {
+        "summary": "validate all registered members",
+        "tags": [
+          "memeber"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-members-validate",
+        "description": "Get a list of phonenumber (Username) and validate for registration status, will returns the registered list of members",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "API Key - 1": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "header"
+      }
+    }
+  }
+}

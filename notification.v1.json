@@ -1,0 +1,731 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "notification",
+    "version": "1.0",
+    "contact": {
+      "name": "Mohamed Rismy Mohamed Azoor",
+      "email": "azoor@rezgateway.com"
+    },
+    "description": "This API is used for manage the Notification"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "nations-watchman"
+    }
+  ],
+  "paths": {
+    "/notification": {
+      "get": {
+        "summary": "List the notifications by the requested member",
+        "tags": [
+          "notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "notification",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      },
+                      "triggerer": {
+                        "title": "member",
+                        "type": "object",
+                        "x-examples": {
+                          "example-1": {
+                            "id": "1",
+                            "name": "Mohamed Rismy Mohamed Azoor",
+                            "gender": "male",
+                            "phonenumber": "0714292844",
+                            "password": "123456"
+                          }
+                        },
+                        "description": "",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "address": {
+                            "type": "string"
+                          },
+                          "phonenumber": {
+                            "type": "string"
+                          },
+                          "ssn": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string",
+                            "format": "password"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "address",
+                          "phonenumber",
+                          "email"
+                        ]
+                      },
+                      "respondents": {
+                        "type": [
+                          "array",
+                          "null"
+                        ],
+                        "items": {
+                          "title": "member",
+                          "type": "object",
+                          "x-examples": {
+                            "example-1": {
+                              "id": "1",
+                              "name": "Mohamed Rismy Mohamed Azoor",
+                              "gender": "male",
+                              "phonenumber": "0714292844",
+                              "password": "123456"
+                            }
+                          },
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "phonenumber": {
+                              "type": "string"
+                            },
+                            "ssn": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string",
+                              "format": "password"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "address",
+                            "phonenumber",
+                            "email"
+                          ]
+                        }
+                      },
+                      "date": {
+                        "type": "string"
+                      },
+                      "time": {
+                        "type": "string"
+                      },
+                      "groupid": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-notification",
+        "description": "Get the list of the notifcation",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "groupid"
+          }
+        ],
+        "requestBody": {}
+      },
+      "post": {
+        "summary": "Create Notification",
+        "tags": [
+          "notification"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-notification",
+        "description": "Create notification when request come once the alarm button pressed",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "notification",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "triggerer": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  },
+                  "respondents": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "groupid": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete notification",
+        "tags": [
+          "notification"
+        ],
+        "responses": {},
+        "operationId": "delete-notification"
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-notification",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Update respondent in for the notification",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "notification",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "triggerer": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  },
+                  "respondents": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  },
+                  "date": {
+                    "type": "string"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "groupid": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

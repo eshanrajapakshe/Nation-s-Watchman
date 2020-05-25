@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/all.css">
+    <style src=""></style>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Nation's Watchmen</title>
+</head>
+
+<body>
+    <div class="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="go-back">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <a class="navbar-brand" href="#">Nation's Watchmen</a>
+
+            <button id="acknowledge-them" type="button" class="btn btn-success"> A </button>
+
+            <div class="nav-status-bar">
+                <div class="main-notifications-pannel">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="user-settings" class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="log-out" class="nav-link" href="#">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <!-- USER LOGIN -->
+            <div class="login-main">
+                <div class="card bg-light">
+                    <article class="card-body">
+                        <h4 class="card-title mt-3 text-center register-title">Log In</h4>
+                        <p class="text-center register-sub-title">Please log-in to Nation's Watchmen</p>
+
+                        <p class="divider-text">
+                            </br>
+                        </p>
+
+                        <!-- LOGIN -->
+                        <div class="user-login">
+                            <form>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" id="login-phone" placeholder="Mobile number"
+                                        type="number">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" id="login-password" placeholder="Password"
+                                        type="password">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" id="log-in-button" class="btn btn-primary btn-block"> Log In
+                                    </button>
+                                </div>
+
+                                <a href="">
+                                    <p class="text-center">Forgot login?</p>
+                                </a>
+
+                                <div>
+                                    <p class="divider-text">
+                                        <span class="bg-light">OR</span>
+                                    </p>
+                                </div>
+
+                                <p class="text-center">Don't have an account?</p>
+                            </form>
+
+                            <div class="form-group">
+                                <button type="button" id="user-register-button" class="btn btn-primary btn-block">
+                                    Create
+                                    Account
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- REGISTER -->
+                        <div id="user-register">
+                            <form>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Full name" type="text">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Email address" type="email">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="Mobile number" type="text">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fas fa-user-friends"></i> </span>
+                                    </div>
+                                    <select class="form-control">
+                                        <option selected=""> Select gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fas fa-id-card"></i> </span>
+                                    </div>
+                                    <input name="" class="form-control" placeholder="ID or Passport number" type="text">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Create password" type="password">
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Repeat password" type="password">
+                                </div>
+
+                                <div class="upload-user-image-wrapper">
+                                    <div class="image-preview">
+                                        <img class="image-fluid" src="./img/image-placeholder.png" alt="">
+                                    </div>
+
+                                    <div class="user-image-select-buttons">
+                                        <div class="select-image-from-device">
+                                            <button type="button" class="btn btn-primary"><i
+                                                    class="fas fa-upload"></i></button>
+                                        </div>
+
+                                        <div class="take-a-selfie">
+                                            <button type="button" class="btn btn-primary"><i
+                                                    class="fas fa-camera"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary btn-block"> Sign Up </button>
+                                </div>
+                            </form>
+
+                            <div>
+                                <p class="divider-text">
+                                    <span class="bg-light">OR</span>
+                                </p>
+                            </div>
+
+                            <p class="text-center">You already have an account?</p>
+
+                            <div class="form-group">
+                                <button id="log-in-again" type="button" class="btn btn-primary btn-block"> Log In
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- END USER LOGIN -->
+
+            <!-- HOME SCREEN -->
+            <section>
+                <div id="main-sections-switcher">
+                    <div class="card bg-light">
+                        <article class="card-body home-main-screen">
+                            <div class="alarm-button" id="alarm-tab">
+                                <div class="alarm-button-main">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <button type="button" class="btn btn-primary"> Emergency Aid
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="groups-button" id="groups-tab">
+                                <div class="groups-button-main">
+                                    <i class="fas fa-users"></i>
+                                    <button type="button" class="btn btn-primary"> Groups </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="home-wrapper" class="bg-light">
+                    <div class="card bg-light">
+                        <article class="card-body main-screen">
+                            <!-- Group List Here -->
+                            <p class="your-groups-text">Your Groups</p>
+                            <div id="group-list-wrapper"></div>
+                        </article>
+
+                        <!-- All groups and add members -->
+                        <article class="card-body" id="groups-screen">
+                            <!-- Add a Group -->
+                            <div class="create-group-wrapper">
+                                <button id="create-group-button" type="button" class="btn btn-primary btn-block"><i
+                                        class="fas fa-plus-circle"></i> Create a Group</button>
+                            </div>
+                            <div class="group-name-input">
+                                <h6>Your group name</h6>
+                                <input id="create-group-input" type="text">
+                                <div class="group-name-input-buttons">
+                                    <button id="create-group-ok" type="button" class="btn btn-primary"> Create </button>
+                                    <button id="create-group-cancel" type="button" class="btn btn-danger"> Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p class="your-groups-text">Your Groups</p>
+                            <div id="available-groups-wrapper">
+                            </div>
+
+                        </article>
+
+                        <!-- Member Details -->
+                        <article class="card-body member-details-body">
+                            <h6 class="group-name-title">Colombo Group</h6>
+                            <p class="your-categories-text">Categories</p>
+
+                            <div id="category-list-wrapper">
+                                <div class="category-list-item family">
+                                    <div class="category-icon">
+                                        <i class="fas fa-house-user"></i>
+                                    </div>
+                                    <div class="category-details">
+                                        <h6>Family</h6>
+                                        <p>3 Members</p>
+                                    </div>
+                                </div>
+
+                                <div class="category-list-item neighbors">
+                                    <div class="category-icon">
+                                        <i class="fas fa-hotel"></i>
+                                    </div>
+                                    <div class="category-details">
+                                        <h6>Neighbors</h6>
+                                        <p>1 Member</p>
+                                    </div>
+                                </div>
+
+                                <div class="category-list-item friends">
+                                    <div class="category-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="category-details">
+                                        <h6>Friends</h6>
+                                        <p>1 Member</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="group-buttons">
+                                <button type="button" class="btn btn-success add-members-button"><i
+                                        class="fas fa-plus"></i>Add Members</button>
+                                <button id="group-wrapper-close" type="button" class="btn btn-danger"> Close
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- User Prifile -->
+                        <div class="user-profile-wrapper">
+                            <div class="user-image">
+                                <img class="image-fluid" src="./img/user.jpg" alt="">
+                            </div>
+                            <div class="user-name">
+                                <h6>John Giovanni</h6>
+                            </div>
+                            <div class="user-details">
+                                <p>Your Details</p>
+                                <form>
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                        </div>
+                                        <input name="" class="form-control" placeholder="Full name" type="text">
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                        </div>
+                                        <input name="" class="form-control" placeholder="Email address" type="email">
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                        </div>
+                                        <input name="" class="form-control" placeholder="Mobile number" type="text">
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fas fa-user-friends"></i> </span>
+                                        </div>
+                                        <select class="form-control">
+                                            <option selected="selected">Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fas fa-id-card"></i> </span>
+                                        </div>
+                                        <input name="" class="form-control" placeholder="ID or Passport number"
+                                            type="text">
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                        </div>
+                                        <input class="form-control" placeholder="Change password" type="password">
+                                    </div>
+                            </div>
+                            <div class="user-profile-buttons">
+                                <button id="update-user-data-btn" type="button" class="btn btn-success"> Update
+                                </button>
+                                <button id="close-user-menu-btn" type="button" class="btn btn-danger"> Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                        <article>
+                            <!-- Alert Confirmation -->
+                            <div class="emergency-confirm-alert">
+                                <h5>Please confirm your emergency</h5>
+                                <p>Press yes to confirm your emergency situation now</p>
+                                <p>Your emergency situation is informing to:</p>
+                                <p class="inform-group-name"></p>
+                                <div class="confirm-emergency-buttons">
+                                    <button id="confirm-emergency-yes" type="button" class="btn btn-success"> Yes
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Alarm On Alert -->
+                            <div class="alarm-wrapper">
+                                <i class="fa fa-bell"></i>
+                                <h6>Alarm is On</h6>
+                                <button id="confirm-emergency-cancel" type="button" class="btn btn-danger"> Cancel
+                                </button>
+                            </div>
+
+                            <!-- Add Members -->
+                            <div class="add-member-wrapper">
+                                <h6>Add your members</h6>
+
+                                <div id="availeble-members-list">
+                                </div>
+
+                                <div class="members-add-buttons">
+                                    <button id="add-members-btn" type="button" class="btn btn-success"> Add
+                                    </button>
+                                    <button id="cancel-add-members-btn" type="button" class="btn btn-danger"> Cancel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Show Group Notifications
+                            <div class="group-notifications-wrapper">
+                                <h6 class="group-notification-title">Colombo group recent notifications</h6>
+
+                                <div id="group-notifications-list">
+                                    <div class="notifications-list-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="notification-details">
+                                            <h6 class="notify-name">Alis was in emergency</h6>
+                                            <p class="notify-date-time">May 01, 2020</p>
+                                            <p class="notify-location">Level 3, Geethanjalee Place, Colombo 03</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifications-list-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="notification-details">
+                                            <h6 class="notify-name">John was in emergency</h6>
+                                            <p class="notify-date-time">May 01, 2020</p>
+                                            <p class="notify-location">Level 3, Geethanjalee Place, Colombo 03</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-notification-buttons">
+                                    <button id="close-notification-panel" type="button" class="btn btn-danger">
+                                        Close
+                                    </button>
+                                </div>
+                            </div> -->
+
+                            <!-- Show All Notifications -->
+                            <div class="all-notifications-wrapper">
+                                <h6>Notifications</h6>
+
+                                <div id="all-notifications-list">
+                                    <div class="all-notifications-list-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="notification-details">
+                                            <h6 class="notify-name">John was in emergency</h6>
+                                            <p class="notify-date-time">May 01, 2020</p>
+                                            <p class="notify-location">Level 3, Geethanjalee Place, Colombo 03</p>
+                                        </div>
+                                    </div>
+                                    <div class="notifications-list-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="notification-details">
+                                            <h6 class="notify-name">Alis was in emergency</h6>
+                                            <p class="notify-date-time">April 28, 2020 - 10.55 am</p>
+                                            <p class="notify-location">No 64, 5th Lane, New Kandy Rd, Galle</p>
+                                        </div>
+                                    </div>
+                                    <div class="all-notifications-list-item">
+                                        <div class="notification-icon">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                        <div class="notification-details">
+                                            <h6 class="notify-name">John was in emergency</h6>
+                                            <p class="notify-date-time">May 01, 2020</p>
+                                            <p class="notify-location">Level 3, Geethanjalee Place, Colombo 03</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-notification-buttons">
+                                    <button id="close-all-notification-panel" type="button" class="btn btn-danger">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Acknowledge Alarm -->
+                            <div class="acknowledge-alarm-wrapper">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h5>John needs help</h5>
+                                <h6>May 12, 2020</h6>
+                                <h6>10.27 am</h6>
+                                <p>His location:</p>
+                                <address class="inform-group-name">
+                                    Level 3, Geethanjalee Place, <br>
+                                    Colombo 03
+                                </address>
+                                <p>Please accept</p>
+                                <div class="acknowledge-alarm--buttons">
+                                    <button id="confirm-acknowledge-alarm" type="button" class="btn btn-success">
+                                        Accept
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <!-- END HOME SCREEN -->
+            <div class="alarm-background-overlay"></div>
+
+        </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </div>
+</body>
+
+</html>

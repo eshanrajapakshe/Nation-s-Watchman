@@ -1,0 +1,1804 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "group",
+    "version": "1.0",
+    "contact": {
+      "name": "Mohamed Rismy Mohamed Azoor",
+      "email": "azoor@rezgateway.com"
+    },
+    "description": "This API is used for Managing groups of this system"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "nations-watchman"
+    }
+  ],
+  "paths": {
+    "/group": {
+      "get": {
+        "summary": "List group",
+        "tags": [
+          "group"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "title": "group",
+                    "type": "object",
+                    "x-tags": [
+                      "group"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "title": "member",
+                          "type": "object",
+                          "x-examples": {
+                            "example-1": {
+                              "id": "1",
+                              "name": "Mohamed Rismy Mohamed Azoor",
+                              "gender": "male",
+                              "phonenumber": "0714292844",
+                              "password": "123456"
+                            }
+                          },
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "phonenumber": {
+                              "type": "string"
+                            },
+                            "ssn": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string",
+                              "format": "password"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "address",
+                            "phonenumber",
+                            "email"
+                          ]
+                        }
+                      },
+                      "notifications": {
+                        "type": "array",
+                        "items": {
+                          "title": "notification",
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "message": {
+                              "type": "string"
+                            },
+                            "triggerer": {
+                              "title": "member",
+                              "type": "object",
+                              "x-examples": {
+                                "example-1": {
+                                  "id": "1",
+                                  "name": "Mohamed Rismy Mohamed Azoor",
+                                  "gender": "male",
+                                  "phonenumber": "0714292844",
+                                  "password": "123456"
+                                }
+                              },
+                              "description": "",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "address": {
+                                  "type": "string"
+                                },
+                                "phonenumber": {
+                                  "type": "string"
+                                },
+                                "ssn": {
+                                  "type": "string"
+                                },
+                                "password": {
+                                  "type": "string",
+                                  "format": "password"
+                                },
+                                "email": {
+                                  "type": "string"
+                                },
+                                "gender": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "address",
+                                "phonenumber",
+                                "email"
+                              ]
+                            },
+                            "respondents": {
+                              "type": [
+                                "array",
+                                "null"
+                              ],
+                              "items": {
+                                "title": "member",
+                                "type": "object",
+                                "x-examples": {
+                                  "example-1": {
+                                    "id": "1",
+                                    "name": "Mohamed Rismy Mohamed Azoor",
+                                    "gender": "male",
+                                    "phonenumber": "0714292844",
+                                    "password": "123456"
+                                  }
+                                },
+                                "description": "",
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "type": "string"
+                                  },
+                                  "address": {
+                                    "type": "string"
+                                  },
+                                  "phonenumber": {
+                                    "type": "string"
+                                  },
+                                  "ssn": {
+                                    "type": "string"
+                                  },
+                                  "password": {
+                                    "type": "string",
+                                    "format": "password"
+                                  },
+                                  "email": {
+                                    "type": "string"
+                                  },
+                                  "gender": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "name",
+                                  "address",
+                                  "phonenumber",
+                                  "email"
+                                ]
+                              }
+                            },
+                            "date": {
+                              "type": "string"
+                            },
+                            "time": {
+                              "type": "string"
+                            },
+                            "groupid": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "admin": {
+                        "title": "member",
+                        "type": "object",
+                        "x-examples": {
+                          "example-1": {
+                            "id": "1",
+                            "name": "Mohamed Rismy Mohamed Azoor",
+                            "gender": "male",
+                            "phonenumber": "0714292844",
+                            "password": "123456"
+                          }
+                        },
+                        "description": "",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "address": {
+                            "type": "string"
+                          },
+                          "phonenumber": {
+                            "type": "string"
+                          },
+                          "ssn": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string",
+                            "format": "password"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "address",
+                          "phonenumber",
+                          "email"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-group",
+        "description": "List all the gruop for logged in user",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "phonenumber",
+            "description": "Member's phone number",
+            "required": true
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create group",
+        "tags": [
+          "group"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-group",
+        "description": "Create new group agains the logged in user",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "required": true,
+            "name": "apikey"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "phonenumber",
+            "required": true,
+            "description": "Member's phone number"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "group",
+                "type": "object",
+                "x-tags": [
+                  "group"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "members": {
+                    "type": "array",
+                    "items": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  },
+                  "notifications": {
+                    "type": "array",
+                    "items": {
+                      "title": "notification",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "triggerer": {
+                          "title": "member",
+                          "type": "object",
+                          "x-examples": {
+                            "example-1": {
+                              "id": "1",
+                              "name": "Mohamed Rismy Mohamed Azoor",
+                              "gender": "male",
+                              "phonenumber": "0714292844",
+                              "password": "123456"
+                            }
+                          },
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "phonenumber": {
+                              "type": "string"
+                            },
+                            "ssn": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string",
+                              "format": "password"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "address",
+                            "phonenumber",
+                            "email"
+                          ]
+                        },
+                        "respondents": {
+                          "type": [
+                            "array",
+                            "null"
+                          ],
+                          "items": {
+                            "title": "member",
+                            "type": "object",
+                            "x-examples": {
+                              "example-1": {
+                                "id": "1",
+                                "name": "Mohamed Rismy Mohamed Azoor",
+                                "gender": "male",
+                                "phonenumber": "0714292844",
+                                "password": "123456"
+                              }
+                            },
+                            "description": "",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "address": {
+                                "type": "string"
+                              },
+                              "phonenumber": {
+                                "type": "string"
+                              },
+                              "ssn": {
+                                "type": "string"
+                              },
+                              "password": {
+                                "type": "string",
+                                "format": "password"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "gender": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "address",
+                              "phonenumber",
+                              "email"
+                            ]
+                          }
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string"
+                        },
+                        "groupid": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "admin": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-group",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Update the group details and this end point can be used to add or remove the members from the group as well as notification",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "group",
+                "type": "object",
+                "x-tags": [
+                  "group"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "members": {
+                    "type": "array",
+                    "items": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  },
+                  "notifications": {
+                    "type": "array",
+                    "items": {
+                      "title": "notification",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "triggerer": {
+                          "title": "member",
+                          "type": "object",
+                          "x-examples": {
+                            "example-1": {
+                              "id": "1",
+                              "name": "Mohamed Rismy Mohamed Azoor",
+                              "gender": "male",
+                              "phonenumber": "0714292844",
+                              "password": "123456"
+                            }
+                          },
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "phonenumber": {
+                              "type": "string"
+                            },
+                            "ssn": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string",
+                              "format": "password"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "address",
+                            "phonenumber",
+                            "email"
+                          ]
+                        },
+                        "respondents": {
+                          "type": [
+                            "array",
+                            "null"
+                          ],
+                          "items": {
+                            "title": "member",
+                            "type": "object",
+                            "x-examples": {
+                              "example-1": {
+                                "id": "1",
+                                "name": "Mohamed Rismy Mohamed Azoor",
+                                "gender": "male",
+                                "phonenumber": "0714292844",
+                                "password": "123456"
+                              }
+                            },
+                            "description": "",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "address": {
+                                "type": "string"
+                              },
+                              "phonenumber": {
+                                "type": "string"
+                              },
+                              "ssn": {
+                                "type": "string"
+                              },
+                              "password": {
+                                "type": "string",
+                                "format": "password"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "gender": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "address",
+                              "phonenumber",
+                              "email"
+                            ]
+                          }
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string"
+                        },
+                        "groupid": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "admin": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "description": "Group object may contains list of member objects as well as notification object"
+        },
+        "tags": [
+          "group"
+        ]
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-group",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Delete a group",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "group",
+                "type": "object",
+                "x-tags": [
+                  "group"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "members": {
+                    "type": "array",
+                    "items": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  },
+                  "notifications": {
+                    "type": "array",
+                    "items": {
+                      "title": "notification",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "message": {
+                          "type": "string"
+                        },
+                        "triggerer": {
+                          "title": "member",
+                          "type": "object",
+                          "x-examples": {
+                            "example-1": {
+                              "id": "1",
+                              "name": "Mohamed Rismy Mohamed Azoor",
+                              "gender": "male",
+                              "phonenumber": "0714292844",
+                              "password": "123456"
+                            }
+                          },
+                          "description": "",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "address": {
+                              "type": "string"
+                            },
+                            "phonenumber": {
+                              "type": "string"
+                            },
+                            "ssn": {
+                              "type": "string"
+                            },
+                            "password": {
+                              "type": "string",
+                              "format": "password"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "gender": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "address",
+                            "phonenumber",
+                            "email"
+                          ]
+                        },
+                        "respondents": {
+                          "type": [
+                            "array",
+                            "null"
+                          ],
+                          "items": {
+                            "title": "member",
+                            "type": "object",
+                            "x-examples": {
+                              "example-1": {
+                                "id": "1",
+                                "name": "Mohamed Rismy Mohamed Azoor",
+                                "gender": "male",
+                                "phonenumber": "0714292844",
+                                "password": "123456"
+                              }
+                            },
+                            "description": "",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "address": {
+                                "type": "string"
+                              },
+                              "phonenumber": {
+                                "type": "string"
+                              },
+                              "ssn": {
+                                "type": "string"
+                              },
+                              "password": {
+                                "type": "string",
+                                "format": "password"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "gender": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "address",
+                              "phonenumber",
+                              "email"
+                            ]
+                          }
+                        },
+                        "date": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string"
+                        },
+                        "groupid": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "admin": {
+                    "title": "member",
+                    "type": "object",
+                    "x-examples": {
+                      "example-1": {
+                        "id": "1",
+                        "name": "Mohamed Rismy Mohamed Azoor",
+                        "gender": "male",
+                        "phonenumber": "0714292844",
+                        "password": "123456"
+                      }
+                    },
+                    "description": "",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "phonenumber": {
+                        "type": "string"
+                      },
+                      "ssn": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string",
+                        "format": "password"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "address",
+                      "phonenumber",
+                      "email"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/group/{groupname}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "groupname",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Gel group details by group name",
+        "tags": [
+          "group"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "group",
+                  "type": "object",
+                  "x-tags": [
+                    "group"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "members": {
+                      "type": "array",
+                      "items": {
+                        "title": "member",
+                        "type": "object",
+                        "x-examples": {
+                          "example-1": {
+                            "id": "1",
+                            "name": "Mohamed Rismy Mohamed Azoor",
+                            "gender": "male",
+                            "phonenumber": "0714292844",
+                            "password": "123456"
+                          }
+                        },
+                        "description": "",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "address": {
+                            "type": "string"
+                          },
+                          "phonenumber": {
+                            "type": "string"
+                          },
+                          "ssn": {
+                            "type": "string"
+                          },
+                          "password": {
+                            "type": "string",
+                            "format": "password"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "address",
+                          "phonenumber",
+                          "email"
+                        ]
+                      }
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "title": "notification",
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "message": {
+                            "type": "string"
+                          },
+                          "triggerer": {
+                            "title": "member",
+                            "type": "object",
+                            "x-examples": {
+                              "example-1": {
+                                "id": "1",
+                                "name": "Mohamed Rismy Mohamed Azoor",
+                                "gender": "male",
+                                "phonenumber": "0714292844",
+                                "password": "123456"
+                              }
+                            },
+                            "description": "",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "address": {
+                                "type": "string"
+                              },
+                              "phonenumber": {
+                                "type": "string"
+                              },
+                              "ssn": {
+                                "type": "string"
+                              },
+                              "password": {
+                                "type": "string",
+                                "format": "password"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "gender": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "address",
+                              "phonenumber",
+                              "email"
+                            ]
+                          },
+                          "respondents": {
+                            "type": [
+                              "array",
+                              "null"
+                            ],
+                            "items": {
+                              "title": "member",
+                              "type": "object",
+                              "x-examples": {
+                                "example-1": {
+                                  "id": "1",
+                                  "name": "Mohamed Rismy Mohamed Azoor",
+                                  "gender": "male",
+                                  "phonenumber": "0714292844",
+                                  "password": "123456"
+                                }
+                              },
+                              "description": "",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "address": {
+                                  "type": "string"
+                                },
+                                "phonenumber": {
+                                  "type": "string"
+                                },
+                                "ssn": {
+                                  "type": "string"
+                                },
+                                "password": {
+                                  "type": "string",
+                                  "format": "password"
+                                },
+                                "email": {
+                                  "type": "string"
+                                },
+                                "gender": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "address",
+                                "phonenumber",
+                                "email"
+                              ]
+                            }
+                          },
+                          "date": {
+                            "type": "string"
+                          },
+                          "time": {
+                            "type": "string"
+                          },
+                          "groupid": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "admin": {
+                      "title": "member",
+                      "type": "object",
+                      "x-examples": {
+                        "example-1": {
+                          "id": "1",
+                          "name": "Mohamed Rismy Mohamed Azoor",
+                          "gender": "male",
+                          "phonenumber": "0714292844",
+                          "password": "123456"
+                        }
+                      },
+                      "description": "",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "phonenumber": {
+                          "type": "string"
+                        },
+                        "ssn": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string",
+                          "format": "password"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "address",
+                        "phonenumber",
+                        "email"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "error",
+                  "type": "object",
+                  "x-tags": [
+                    "error"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-group-groupname",
+        "description": "Get group details by group name",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "apikey",
+            "required": true
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "API Key - 1": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "header"
+      }
+    }
+  }
+}
