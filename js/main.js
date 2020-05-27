@@ -346,39 +346,14 @@ addMembersBtn.onclick = function () {
 
 // Remove a group
 $('#available-groups-wrapper').on('click', '.remove-group-button', function () {
-
-    var dataElement = this.parentElement.parentElement
+    let dataElement = this.parentElement.parentElement
     groupId = dataElement.dataset.groupid;
 
     groupData.splice(groupId);
     dataElement.remove();
 
-    let removeLocalS = JSON.parse(localStorage.getItem("newGroupList"));
-    let selectedLocalData =  removeLocalS[groupId]
-    localStorage.removeItem(selectedLocalData);
-
-    // for(a = 0; a < removeLocalS.length; a++) {
-    //     if(removeLocalS[a] == groupId){
-    //         localStorage.removeItem(groupId); 
-    //     }
-    // }
-
-    console.log(localStorage);
-    console.log(groupData);
-
-    // for (i = 0; i < groupData.length; i++) {
-    //     if(groupId === groupData[i]){
-    //         console.log("DONE")
-    //     }
-
-    //     break;
-    // }
-
+    localStorage.setItem('newGroupList', JSON.stringify(groupData));
 });
-
-
-
-
 
 
 
