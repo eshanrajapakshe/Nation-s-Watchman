@@ -187,6 +187,7 @@ const addGroup = (ev) => {
     ev.preventDefault();
 
     let addGroupInput = document.getElementById('create-group-input').value;
+    let groupIndx = groupData.length;
 
     if (addGroupInput != "") {
 
@@ -196,7 +197,7 @@ const addGroup = (ev) => {
             groupMembers: "Add",
         }
 
-        var availableGroupItem = $('<div class="available-group-item"></div>');
+        var availableGroupItem = $('<div class="available-group-item"></div>').attr("data-groupid", groupIndx);
         var availableGroupItemDetails = $('<div class="available-group-item-details"></div>');
         var availableGroupItemName = $('<h6 class="available-group-item-name"></h6>').text(newGroup.groupName);
         var availebleMembersGroup = $('<p class="availeble-members-group"></p>').text(newGroup.groupMembers + " Members");
@@ -277,16 +278,6 @@ function closeAddMembersWrapper() {
     $(".add-member-wrapper").slideUp();
 };
 
-// function checkDuplicatesOfNewMembers() {
-//     result = tempSelectedMembers.filter(function (a) {
-//         return !this[a.memberName] && (this[a.memberName] = true);
-//     }, Object.create(null));
-
-//     selectedMembers.push(...result);
-
-//     newSelectedMembers = {};
-//     tempSelectedMembers = [];
-// }
 
 // Select member checkbox
 $(function () {
@@ -348,11 +339,13 @@ addMembersBtn.onclick = function () {
 $('#available-groups-wrapper').on('click', '.remove-group-button', function () {
     let dataElement = this.parentElement.parentElement
     groupId = dataElement.dataset.groupid;
-
-    groupData.splice(groupId);
+    delete groupData[groupId];
+    groupData = groupData.filter(x => x);
     dataElement.remove();
 
     localStorage.setItem('newGroupList', JSON.stringify(groupData));
+    loadList();
+    loadaAvailableList();
 });
 
 
